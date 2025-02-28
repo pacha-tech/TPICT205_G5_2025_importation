@@ -1,0 +1,97 @@
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    font-family: Arial,sans-serif;
+}
+
+.form_group {
+    margin-bottom: 15px;
+}
+
+.form_input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-raduis: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+    .form_input:focus {
+        border-color: #0066cc;
+        outline: none;
+    }
+
+.btn_submit {
+    text-align: center;
+    width: 30%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    /*cursor: pointer;*/
+    transition: background-color 0.3s;
+}
+
+/* Style du header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #004080;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+    .nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav a:hover {
+            color: #ffcc00;
+        }
+
+.btn {
+    background: #ffcc00;
+    color: #004080;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+    .btn:hover {
+        background: #ffaa00;
+    }

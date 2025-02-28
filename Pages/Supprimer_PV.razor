@@ -1,0 +1,62 @@
+@page "/Supprimer_PV"
+@inject Supprimer_PVService Supprimer_PVService
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Université" />
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/Accueil_enseignant">Accueil</a>
+        <a href="/Creation_PV">Ajouter un PV</a>
+        <a href="/Supprimer_PV">Supprimer un PV</a>
+        <a href="/Modifier_PV">Modifier un PV</a>
+        <a href="/Consulter_PV-enseignant">Consulter les PV</a>
+        <!--
+        <a href="/connexion" class="btn">connexion</a>
+        -->
+    </nav>
+</header>
+
+<h3>supprimer un pv</h3>
+
+<EditForm Model="supprimer_pv" OnValidSubmit="SupprimerPV">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="information_pv">
+        <div class="info_pv">
+            <input type="text" @bind="supprimer_pv.Code_PV" placeholder="Code du PV a supprimer"/>
+        </div>
+        <div class="info_pv">
+            <button class="btn_submit" type="submit">Supprimer</button>
+        </div>
+    </div>
+</EditForm>
+
+@if (resultMessage != null)
+{
+    <p>@resultMessage</p>
+}
+
+@code{
+    private string resultMessage;
+
+    Supprimer_PV1 supprimer_pv = new Supprimer_PV1();
+    private async Task SupprimerPV()
+    {
+        var result = await Supprimer_PVService.SupprimerPV(supprimer_pv.Code_PV);
+        if (result)
+        {
+            resultMessage = "PV supprimé avec succès.";
+            supprimer_pv.Code_PV = string.Empty;
+        }
+        else
+        {
+            resultMessage = "Aucun PV trouvé avec ce code.";
+        }
+    }
+}
+

@@ -1,0 +1,74 @@
+﻿@page "/Inscription_enseignant"
+@inject EnseignantService EnseignantService
+@inject NavigationManager NavigationManager
+@using correction_205.Services;
+@using Microsoft.EntityFrameworkCore;
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Université" />
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/">Accueil</a>
+        <!--
+        <a href="/etudiants">Étudiants</a>
+        <a href="/enseignants">Enseignants</a>
+        <a href="/pv-notes">PV des Notes</a>
+        -->
+        <a href="/connexion" class="btn">connexion</a>
+    </nav>
+</header>
+
+<h3>Inscription enseignant</h3>
+
+<EditForm Model="enseignant" OnValidSubmit="HandleValidSubmit" class="form">
+
+
+    <div class="form_group">
+        <input type="text" placeholder="Name" class="form_input" @bind="enseignant.Nom"/>
+        <ValidationMessage For="@(() => enseignant.Nom)" />
+    </div>
+
+    <div class="form_group">
+        <input type="email" placeholder="Email" class="form_input" @bind="enseignant.Email"/>
+        <ValidationMessage For="@(() => enseignant.Email)" />
+    </div>
+
+    <div class="form_group">
+        <input type="password" placeholder="Password" class="form_input"@bind="enseignant.Password"/>
+        <ValidationMessage For="@(() => enseignant.Password)" />
+    </div>
+
+    <button class="btn_submit">S'inscrire</button>  vous avez deja un compte? <a href="Connection_enseignant">connectez vous</a>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert @alertClass">@message</div>
+}
+
+@code{
+    private Enseignant enseignant = new Enseignant();
+    private string message;
+    private string alertClass;
+
+    private void HandleValidSubmit()
+    {
+        try
+        {
+            EnseignantService.AddEnseignant(enseignant);
+            message = "Enseignant enregistrer avec success";
+            alertClass = "alert-success";
+
+            NavigationManager.NavigateTo("/Page_enseignant");
+        }
+        catch (Exception ex)
+        {
+            message = $"Erreur lors de l'enregistrement:{ex.Message}";
+            alertClass = "alert-danger";
+        }
+    }
+}
+

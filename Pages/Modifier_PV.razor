@@ -1,0 +1,157 @@
+@page "/Modifier_PV"
+@inject NavigationManager NavigationManager
+@inject Modifier_PVService Modifier_PVService
+@using correction_205.Services;
+
+<header class="header">
+    <div class="logo">
+        <p>tof</p>
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/Accueil_enseignant">Accueil</a>
+        <a href="/Creation_PV">Ajouter un PV</a>
+        <a href="/Supprimer_PV">Supprimer un PV</a>
+        <a href="/Modifier_PV">Modifier un PV</a>
+        <a href="/Consulter_PV-enseignant">Consulter les PV</a>
+        <!--
+        <a href="/connexion" class="btn">connexion</a>
+        -->
+    </nav>
+</header>
+
+<h3>Modifier les informations du PV</h3>
+<EditForm Model="modifier_pv" OnValidSubmit="HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <input type="text" placeholder="Entrer le code du PV a modifier" @bind="CODE_PV"/>
+    </div>
+    <p>que souhaitez vous modifier sur le PV ?</p>
+
+    <div class="option">
+        <label><input type="checkbox" @bind="modifier_nom_pv" /> Nom du PV</label>
+        <label><input type="checkbox" @bind="modifier_nom_ue" /> Nom de l'UE'</label>
+        <label><input type="checkbox" @bind="modifier_nom_prof" />Nom du Prof</label>
+    </div>
+
+    @if (modifier_nom_pv)
+    {
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nouveau nom du PV" @bind="modifier_pv.Nom_PV" />
+        </div>
+    }
+    @if (modifier_nom_ue)
+    {
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nouveau nom l'UE" @bind="modifier_pv.Nom_UE" />
+        </div>
+    }
+    @if (modifier_nom_prof)
+    {
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nouveau nom du prof" @bind="modifier_pv.Nom_prof" />
+        </div>
+    }
+    <button type="submit">Modifier</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="@messageClass">@message</div>
+}
+
+@code{
+
+    private string CODE_PV;
+    private Modifier_PV1 modifier_pv = new Modifier_PV1();
+    private bool modifier_nom_pv = false;
+    private bool modifier_nom_ue = false;
+    private bool modifier_nom_prof = false;
+    private string message; // Message de retour
+    private string messageClass; // Classe pour le style du message
+
+
+    //private async void HandleValidSubmit()
+    
+       
+    private async Task HandleValidSubmit()
+    {
+        /*
+        try
+        {
+            await Modifier_PVService.UpdatePVAsync(modifier_pv);
+            message = "Modification réussie !"; // Message de succès
+            messageClass = "success"; // Classe CSS pour le succès
+        }
+        catch (Exception ex)
+        {
+            message = "Échec de la modification : " + ex.Message; // Message d'échec
+            messageClass = "error"; // Classe CSS pour l'erreur
+        }
+
+        // Réinitialiser les champs après la soumission
+        CODE_PV = string.Empty;
+        modifier_pv = new Modifier_PV1();
+        modifier_code = false;
+        modifier_nom_pv = false;
+        modifier_nom_ue = false;
+        modifier_nom_prof = false;
+    }
+
+
+        try
+        {
+
+            // Utilisation de CODE_PV pour la recherche
+            var existingPV = await Modifier_PVService.GetPVByCodeAsync(CODE_PV);
+            if (existingPV != null)
+            {
+                // Mettre à jour les propriétés de existingPV avec modifier_pv
+                existingPV.Nom_PV = modifier_pv.Nom_PV;
+                existingPV.Nom_UE = modifier_pv.Nom_UE;
+                existingPV.Nom_prof = modifier_pv.Nom_prof;
+
+                await Modifier_PVService.UpdatePVAsync(existingPV);
+
+                message = "Modification réussie !";
+                messageClass = "success";
+            }
+            else
+            {
+                message = "PV non trouvé pour le code spécifié.";
+                messageClass = "error";
+            }
+
+        }
+        catch (Exception ex)
+        {
+            message = "Échec de la modification : " + ex.Message;
+            messageClass = "error";
+        }
+        */
+        var result = await Modifier_PVService.ModifierPV(modifier_pv);
+
+        if (result)
+        {
+            message = "PV modifié avec succès.";
+            messageClass = "success"; // Classe CSS pour le style
+        }
+        else
+        {
+            message = "Échec de la modification du PV.";
+            messageClass = "error"; // Classe CSS pour le style
+        }
+
+        // Réinitialiser les champs après la soumission
+        CODE_PV = string.Empty;
+        modifier_pv = new Modifier_PV1();
+        modifier_nom_pv = false;
+        modifier_nom_ue = false;
+        modifier_nom_prof = false;
+        
+    }
+}

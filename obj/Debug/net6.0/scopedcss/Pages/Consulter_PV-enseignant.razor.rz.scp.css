@@ -1,0 +1,89 @@
+.title[b-hhd6e551iu] {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.loading[b-hhd6e551iu] {
+    font-style: italic;
+    color: #777;
+}
+
+.no-data[b-hhd6e551iu] {
+    color: red;
+    font-weight: bold;
+}
+
+.pv-table[b-hhd6e551iu] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .pv-table th[b-hhd6e551iu], .pv-table td[b-hhd6e551iu] {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .pv-table th[b-hhd6e551iu] {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .pv-table tr:hover[b-hhd6e551iu] {
+        background-color: #f1f1f1;
+    }
+
+
+/* Style du header */
+
+.header[b-hhd6e551iu] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #004080;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo[b-hhd6e551iu] {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img[b-hhd6e551iu] {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+.nav[b-hhd6e551iu] {
+    display: flex;
+    gap: 20px;
+}
+
+    .nav a[b-hhd6e551iu] {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav a:hover[b-hhd6e551iu] {
+            color: #ffcc00;
+        }
+
+.btn[b-hhd6e551iu] {
+    background: #ffcc00;
+    color: #004080;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+    .btn:hover[b-hhd6e551iu] {
+        background: #ffaa00;
+    }
+

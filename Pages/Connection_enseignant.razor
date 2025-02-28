@@ -1,0 +1,77 @@
+﻿@page "/Connection_enseignant"
+@inject Auth_enseignant_Service Auth_enseignant_Service;
+@inject NavigationManager NavigationManager
+@using correction_205.Data;
+@using correction_205.Models;
+@using correction_205.Services;
+
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Université" />
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/">Accueil</a>
+        <!--
+        <a href="/etudiants">Étudiants</a>
+        <a href="/enseignants">Enseignants</a>
+        <a href="/pv-notes">PV des Notes</a>
+        -->
+        <a href="/connexion" class="btn">connexion</a>
+    </nav>
+</header>
+
+<h2>Connection enseignant</h2>
+
+<EditForm class="form" Model="@loginModel" OnValidSubmit="HandleLogin">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+	<div class="form_group">
+        <input type="email" placeholder="Email" class="form_input" id="Email" @bind="loginModel.Email" />
+	</div>
+	<div class="form_group">
+		<input type="password" placeholder="Password" class="form_input"  id="Password" @bind="loginModel.Password"/>
+	</div>
+	<button class="btn_submit">Se connecter</button>  vous n'avez pas de compte? <a href="Inscription_enseignant">Inscrivez vous</a>
+	
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert @alertClass">@message</div>
+}
+
+@code {
+    private Enseignant_connection loginModel = new Enseignant_connection();
+    private string message;
+    private string alertClass;
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            var success = await Auth_enseignant_Service.LoginAsync(loginModel);
+            if (success)
+            {
+                message = "Connexion réussie !";
+                alertClass = "alert-success";
+                
+                NavigationManager.NavigateTo("/Page_enseignant");
+            }
+            else
+            {
+                message = "Identifiants incorrects, veuillez réessayer.";
+                alertClass = "alert-danger";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Erreur lors de la connexion : {ex.Message}";
+            alertClass = "alert-danger";
+        }
+    }
+}

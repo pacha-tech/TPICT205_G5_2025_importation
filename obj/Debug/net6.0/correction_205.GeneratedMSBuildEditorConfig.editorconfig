@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = correction_205
+build_property.RootNamespace = correction_205
+build_property.ProjectDir = D:\ict4D\ict205\correction_205\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\ict4D\ict205\correction_205
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/ict4D/ict205/correction_205/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/TPICT205_G5_2025_importation/App.razor]
+build_metadata.AdditionalFiles.TargetPath = VFBJQ1QyMDVfRzVfMjAyNV9pbXBvcnRhdGlvblxBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/TPICT205_G5_2025_importation/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = VFBJQ1QyMDVfRzVfMjAyNV9pbXBvcnRhdGlvblxfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/Pages/Accueil.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjdWVpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jwsbikzsjd
+
+[D:/ict4D/ict205/correction_205/Pages/Accueil_enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjdWVpbF9lbnNlaWduYW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0grww8jc9u
+
+[D:/ict4D/ict205/correction_205/Pages/Accueil_etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjdWVpbF9ldHVkaWFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-kguho8k8yg
+
+[D:/ict4D/ict205/correction_205/Pages/A_propos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQV9wcm9wb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-fvok46jz0n
+
+[D:/ict4D/ict205/correction_205/Pages/A_propos_enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQV9wcm9wb3NfZW5zZWlnbmFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1xyzxkiuxg
+
+[D:/ict4D/ict205/correction_205/Pages/A_propos_etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQV9wcm9wb3NfZXR1ZGlhbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jhw8x2lac2
+
+[D:/ict4D/ict205/correction_205/Pages/Connection.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ubmVjdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-e34pjshy18
+
+[D:/ict4D/ict205/correction_205/Pages/Connection_enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ubmVjdGlvbl9lbnNlaWduYW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-6rwtzs313f
+
+[D:/ict4D/ict205/correction_205/Pages/Connection_etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ubmVjdGlvbl9ldHVkaWFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-w73ndp2w9v
+
+[D:/ict4D/ict205/correction_205/Pages/Consulter_PV-enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGVyX1BWLWVuc2VpZ25hbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hhd6e551iu
+
+[D:/ict4D/ict205/correction_205/Pages/Consulter_PV-etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VsdGVyX1BWLWV0dWRpYW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-qc3hwtylri
+
+[D:/ict4D/ict205/correction_205/Pages/Creation_PV.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRpb25fUFYucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-fqdwrltigw
+
+[D:/ict4D/ict205/correction_205/Pages/Inscription_enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcHRpb25fZW5zZWlnbmFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-sn1obwzjjk
+
+[D:/ict4D/ict205/correction_205/Pages/Inscription_etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcHRpb25fZXR1ZGlhbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dbco9o0q3n
+
+[D:/ict4D/ict205/correction_205/Pages/Modifier_PV.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZpZXJfUFYucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-f7avr98u35
+
+[D:/ict4D/ict205/correction_205/Pages/Page_enseignant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9lbnNlaWduYW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-zpcfxl1uew
+
+[D:/ict4D/ict205/correction_205/Pages/Page_etudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9ldHVkaWFudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-gdyuvf7f39
+
+[D:/ict4D/ict205/correction_205/Pages/Supprimer_PV.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcHJpbWVyX1BWLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ehqrlfffnd
+
+[D:/ict4D/ict205/correction_205/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kuhr4y6w14
+
+[D:/ict4D/ict205/correction_205/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ag9x0w3y0g
+
+[D:/ict4D/ict205/correction_205/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ict4D/ict205/correction_205/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

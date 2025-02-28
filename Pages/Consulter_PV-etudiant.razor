@@ -1,0 +1,68 @@
+@page "/Consulter_PV-etudiant"
+@inject Consulter_PVService Consulter_PVService
+
+
+<header class="header">
+    <div class="logo">
+        <img src="image.jpeg" />
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/Accueil_etudiant">Accueil</a>
+        <!---
+        <a href="/Modifier_PV">Modifier un PV</a>
+        <a href="/Consulter_PV">Consulter les PV</a>
+        
+        <a href="/connexion" class="btn">connexion</a>
+        -->
+    </nav>
+</header>
+
+<h3 class="title">Liste des PV</h3>
+
+@if (pvList == null)
+{
+    <p class="loading">Chargement des PV...</p>
+}
+else if (pvList.Count == 0)
+{
+    <p class="no-data">Aucun PV trouvé.</p>
+}
+else
+{
+    <table class="pv-table">
+        <thead>
+            <tr>
+                <th>Code_PV</th>
+                <th>Nom_PV</th>
+                <th>Nom_UE</th>
+                <th>Nom_prof</th>
+                <th>Date_creation</th>
+                <!-- Ajoutez d'autres en-têtes si nécessaire -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pv in pvList)
+            {
+                <tr>
+                    <td>@pv.Code_PV</td>
+                    <td>@pv.Nom_PV</td>
+                    <td>@pv.Nom_UE</td>
+                    <td>@pv.Nom_prof</td>
+                    <td>@pv.Date_creation</td>
+                    <!-- Ajoutez d'autres colonnes si nécessaire -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Creation_PV1> pvList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        pvList = await Consulter_PVService.ConsulterPV();
+    }
+}

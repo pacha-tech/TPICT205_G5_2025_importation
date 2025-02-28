@@ -1,0 +1,125 @@
+/* Style du header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #004080;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+    .nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav a:hover {
+            color: #ffcc00;
+        }
+
+.btn {
+    background: #ffcc00;
+    color: #004080;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+    .btn:hover {
+        background: #ffaa00;
+    }
+
+
+/* Style général du formulaire */
+form {
+    margin-top: 20px;
+    margin-left:400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 400px;
+    background-color: #f9f9f9;
+}
+
+/* Style des groupes de champs */
+.form-group {
+    margin-bottom: 15px;
+    width: 50%;
+    margin-left: 25%;
+    /*display: ; /* Les champs sont masqués par défaut */
+}
+
+/* Style des labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style des champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.option{
+    margin-left:90px;
+}
+
+/* Style du bouton */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+/* Style des cases à cocher */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Afficher les champs activés */
+.form-group.visible {
+    display: block;
+}
+
+h3{
+    text-align: center;
+}
+h4{
+    text-align:center;
+}

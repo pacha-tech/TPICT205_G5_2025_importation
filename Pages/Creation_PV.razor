@@ -1,0 +1,85 @@
+﻿@page "/Creation_PV"
+@inject Creation_PVService Creation_PVService
+@inject NavigationManager NavigationManager
+@using correction_205.Services;
+@using Microsoft.EntityFrameworkCore;
+
+<header class="header">
+	<div class="logo">
+		<p>tof</p>
+		<h1>Gestion des PV</h1>
+	</div>
+
+	<nav class="nav">
+		<a href="/Accueil_enseignant">Accueil</a>
+		<a href="/Creation_PV">Ajouter un PV</a>
+		<a href="/Supprimer_PV">Supprimer un PV</a>
+		<a href="/Modifier_PV">Modifier un PV</a>
+		<a href="/Consulter_PV-enseignant">Consulter les PV</a>
+		<!--
+		<a href="/connexion" class="btn">connexion</a>
+		-->
+	</nav>
+</header>
+
+<h3>Creation des PV</h3>
+
+	<h4>Information Principale du PV </h4>
+	<EditForm class="form" Model="creation_pv" OnValidSubmit="HandleValidSubmit">
+
+	    <div class="form_group">
+		        <input type="text" placeholder="Code du PV" @bind="creation_pv.Code_PV" class="form_input" />
+				<ValidationMessage For="@(() => creation_pv.Code_PV)" />
+	    </div>
+	    <div class="form_group">
+		        <input type="text" placeholder="Nom du PV" @bind="creation_pv.Nom_PV" class="form_input" />
+				<ValidationMessage For="@(() => creation_pv.Nom_PV)" />
+		</div>
+	    <div class="form_group">
+		        <input type="text" placeholder="Nom du l'UE" @bind="creation_pv.Nom_UE" class="form_input" />
+				<ValidationMessage For="@(() => creation_pv.Nom_UE)" />
+		</div>
+	    <div class="form_group">
+		        <input type="text" placeholder="Nom du prof" @bind="creation_pv.Nom_prof" class="form_input" />
+				<ValidationMessage For="@(() => creation_pv.Nom_prof)" />
+		</div>
+	    <div class="form_group">
+		        <input type="date" placeholder="Date de creation" @bind="creation_pv.Date_creation" class="form_input" />
+				<ValidationMessage For="@(() => creation_pv.Date_creation)" />
+		</div>
+		<button class="btn_submit" type="submit">Creer</button>
+		</EditForm>
+
+	
+	
+	@if (!string.IsNullOrEmpty(message))
+	{
+		<div class="alert @alertClass">@message</div>
+	}
+
+<div class="generation">
+	<div>
+		<h4>Generation du PV</h4>
+	</div>
+</div>
+@code {
+	private Creation_PV1 creation_pv = new Creation_PV1();
+	private string message;
+	private string alertClass;
+
+	private void HandleValidSubmit()
+	{
+		try
+		{
+			Creation_PVService.AddPV(creation_pv);
+			message = "PV creer avec success";
+			alertClass = "alert-success";
+
+		}
+		catch (Exception ex)
+		{
+			message = $"Erreur lors de la creation du PV:{ex.Message}";
+			alertClass = "alert-danger";
+		}
+	}
+}

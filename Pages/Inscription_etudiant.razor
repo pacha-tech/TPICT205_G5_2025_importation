@@ -1,0 +1,97 @@
+@page "/inscription_etudiant"
+@inject EtudiantService EtudiantService
+@inject NavigationManager NavigationManager
+@using correction_205.Services;
+@using Microsoft.EntityFrameworkCore;
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Université" />
+        <h1>Gestion des PV</h1>
+    </div>
+
+    <nav class="nav">
+        <a href="/">Accueil</a>
+        <!--
+        <a href="/etudiants">Étudiants</a>
+        <a href="/enseignants">Enseignants</a>
+        <a href="/pv-notes">PV des Notes</a>
+        -->
+        <a href="/connexion" class="btn">connexion</a>
+    </nav>
+</header>
+
+<h3>Ajouter un Étudiant</h3>
+
+<EditForm Model="etudiant" OnValidSubmit="HandleValidSubmit" class="form">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div>
+        <label>Matricule:</label>
+        <input type="text" @bind="etudiant.Matricule" class="form_input"/>
+        <ValidationMessage For="@(() => etudiant.Matricule)" />
+    </div>
+    <div>
+        <label>Nom:</label>
+        <input type="text" @bind="etudiant.Nom" class="form_input" />
+        <ValidationMessage For="@(() => etudiant.Nom)" />
+    </div>
+    <div>
+        <label>Prénom:</label>
+        <input type="text" @bind="etudiant.Prenom" class="form_input" />
+        <ValidationMessage For="@(() => etudiant.Prenom)" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" @bind="etudiant.Email" class="form_input" />
+        <ValidationMessage For="@(() => etudiant.Email)" />
+    </div>
+    <div>
+        <label>Date de Naissance:</label>
+        <input type="text" @bind="etudiant.Date_naissance" class="form_input" />
+        <ValidationMessage For="@(() => etudiant.Date_naissance)" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" @bind="etudiant.Password" class="form_input" />
+        <ValidationMessage For="@(() => etudiant.Password)" />
+    </div>
+    <button type="submit" class="btn_submit">Enregistrer</button>
+</EditForm>:
+
+
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert @alertClass">@message</div>
+}
+
+
+@code {
+    private Etudiant etudiant = new Etudiant();
+    private string message;
+    private string alertClass;
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            await EtudiantService.AddEtudiant(etudiant);
+            message = "Etudiant inscrit avec succes";
+            alertClass = "alert-success";
+
+            NavigationManager.NavigateTo("/Accueil_etudiant");
+        }
+        catch(InvalidOperationException ex){
+            message = " Ce Matricule existe deja";
+            alertClass = "alert-danger";
+        }
+        catch (Exception ex)
+        {
+            message = $"Erreur lors de l'enregistrement:{ex.Message}";
+            alertClass = "alert-danger";
+        }
+    }
+}

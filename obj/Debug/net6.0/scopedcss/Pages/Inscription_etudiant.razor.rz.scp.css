@@ -1,0 +1,102 @@
+.form[b-dbco9o0q3n] {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2[b-dbco9o0q3n] {
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.form_group[b-dbco9o0q3n] {
+    margin-bottom: 15px;
+}
+
+.form_input[b-dbco9o0q3n] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Correction de la faute de frappe */
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+    .form_input:focus[b-dbco9o0q3n] {
+        border-color: #0066cc;
+        outline: none;
+    }
+
+.btn_submit[b-dbco9o0q3n] {
+    display: block; /* Pour centrer le bouton */
+    margin: 0 auto; /* Centrer le bouton */
+    width: 30%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn_submit:hover[b-dbco9o0q3n] {
+        background-color: #005bb5; /* Couleur au survol */
+    }
+
+/* Style du header */
+.header[b-dbco9o0q3n] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #004080;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo[b-dbco9o0q3n] {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img[b-dbco9o0q3n] {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+.nav[b-dbco9o0q3n] {
+    display: flex;
+    gap: 20px;
+}
+
+    .nav a[b-dbco9o0q3n] {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav a:hover[b-dbco9o0q3n] {
+            color: #ffcc00;
+        }
+
+.btn[b-dbco9o0q3n] {
+    background: #ffcc00;
+    color: #004080;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+    .btn:hover[b-dbco9o0q3n] {
+        background: #ffaa00;
+    }
